@@ -1,6 +1,38 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse, faClockRotateLeft, faClock, faGlobe, faFireFlameCurved, faFolderOpen, faPlay } from '@fortawesome/free-solid-svg-icons';
+
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <div className="flex flex-col bg-gray-900 text-white p-3 md:w-1/6 space-y-3 border-r">
+      <div className="p-2 flex justify-start items-center">
+        < FontAwesomeIcon className='text-white h-5 mr-6' icon={faHouse} />
+        <p className='text-lg'>Home</p>
+      </div>
+      <div className="p-2 flex justify-start items-center">
+        < FontAwesomeIcon className='text-white h-5 mr-6' icon={faFireFlameCurved} />
+        <p className='text-lg'>Shorts</p>
+      </div>
+      <div className="p-2 flex justify-start items-center">
+        < FontAwesomeIcon className='text-white h-5 mr-6' icon={faGlobe} />
+        <p className='text-lg'>Subscription</p>
+      </div>
+      <div className="p-2 flex justify-start items-center">
+        < FontAwesomeIcon className='text-white h-5 mr-6' icon={faFolderOpen} />
+        <p className='text-lg'>Library</p>
+      </div>
+      <div className="p-2 flex justify-start items-center">
+        < FontAwesomeIcon className='text-white h-5 mr-6' icon={faClockRotateLeft} />
+        <p className='text-lg'>History</p>
+      </div>
+      <div className="p-2 flex justify-start items-center">
+        < FontAwesomeIcon className='text-white h-5 mr-6' icon={faPlay} />
+        <p className='text-lg'>Your videos</p>
+      </div>
+      <div className="p-2 flex justify-start items-center">
+        < FontAwesomeIcon className='text-white h-5 mr-6' icon={faClock} />
+        <p className='text-lg'>Watch later</p>
+      </div>
+    </div >
   )
 }
 
