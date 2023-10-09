@@ -1,11 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faMagnifyingGlass, faBell, faVideo, faBars } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { toggleMenu } from '../utils/appSlice';
 
 function Header() {
+    const dispatch = useDispatch();
+
+    const toggleMenuHandler = () => {
+        dispatch(toggleMenu());
+    }
+
     return (
         <div className='flex flex-row border justify-between border-black p-2 bg-gray-900 items-center'>
             <div className="left flex flex-row border border-blue-900 w-1/12 p-2 justify-between items-center">
-                < FontAwesomeIcon className='text-white h-8' icon={faBars} />
+                < FontAwesomeIcon onClick={toggleMenuHandler} className='text-white h-8 cursor-pointer' icon={faBars} />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png?20220706172052" alt="YT-LOGO" className='w-12' />
             </div>
 
