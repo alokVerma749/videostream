@@ -1,16 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faClockRotateLeft, faClock, faGlobe, faFireFlameCurved, faFolderOpen, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const isMenuOpen = useSelector(store => store.app.isMenuOpenFlag);
   if (!isMenuOpen) return null;
   return (
     <div className="flex flex-col bg-gray-900 text-white p-3 md:w-1/6 space-y-3 border-r">
-      <div className="p-2 flex justify-start items-center">
+      <Link to="/" className="p-2 flex justify-start items-center">
         < FontAwesomeIcon className='text-white h-5 mr-6' icon={faHouse} />
         <p className='text-lg'>Home</p>
-      </div>
+      </Link>
       <div className="p-2 flex justify-start items-center">
         < FontAwesomeIcon className='text-white h-5 mr-6' icon={faFireFlameCurved} />
         <p className='text-lg'>Shorts</p>

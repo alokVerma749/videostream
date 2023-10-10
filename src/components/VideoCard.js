@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const VideoCard = ({ info }) => {
     const { id, etag } = info;
@@ -7,8 +8,10 @@ const VideoCard = ({ info }) => {
 
     return (
         <div className={"flex flex-col w-full md:w-[30%] m-3 cursor-pointer space-y-1"}>
-            < img className="thummbnail rounded-xl" src={thumbnails.medium.url} alt="" />
-            <div className="title">{title}</div>
+            <Link to={"/watch?v=" + id}>
+                < img className="thummbnail rounded-xl" src={thumbnails.medium.url} alt="" />
+                <div className="title">{title}</div>
+            </Link>
             <div className="channel_name">{channelTitle}</div>
             <div className="stats">{likeCount} views {publishedAt} ago</div>
         </div >
