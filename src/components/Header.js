@@ -12,9 +12,9 @@ function Header() {
 
     return (
         <div className='flex flex-row border justify-between border-black p-2 bg-gray-900 items-center'>
-            <div className="left flex flex-row border border-blue-900 w-1/12 p-2 justify-between items-center">
+            <div className="left flex flex-row w-40 p-2 justify-between items-center">
                 < FontAwesomeIcon onClick={toggleMenuHandler} className='text-white h-8 cursor-pointer' icon={faBars} />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png?20220706172052" alt="YT-LOGO" className='w-12' />
+                <img src="/logo.png" alt="YT-LOGO" className='w-20' />
             </div>
 
             <form className="inputBox flex flex-row w-1/3">
