@@ -16,7 +16,7 @@ const WatchPage = () => {
     useEffect(() => {
         dispatch(closeMenu());
         getCommets();
-    }, [])
+    }, [searchParams])
 
     const getCommets = async () => {
         const data = await fetch(YOUTUBE_COMMENTS_API + "&videoId=" + searchParams.get("v"));
