@@ -18,4 +18,19 @@ const VideoCard = ({ info }) => {
     )
 }
 
-export default VideoCard
+export const SideVideoCard = ({ info }) => {
+    const { id } = info;
+    const { channelTitle, channelId, thumbnails } = info.snippet;
+    const { title } = info.snippet.localized;
+    return (
+        <Link to={"/watch?v=" + id} className={"flex flex-row items-center cursor-pointer p-2 space-x-2"}>
+            < img className="thummbnail w-[180px] h-[100px] rounded-xl" src={thumbnails.medium.url} alt="" />
+            <div className="w-3/4">
+                <div className="title text-sm">{title}</div>
+                <div className="channel_name text-sm">{channelTitle}</div>
+            </div>
+        </Link >
+    )
+}
+
+export default VideoCard;

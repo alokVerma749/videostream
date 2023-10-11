@@ -1,20 +1,8 @@
-import { useEffect, useState } from 'react'
-import { YOUTUBE_VIDEOS_API } from '../utils/constants'
 import VideoCard from './VideoCard';
+import useFetchVideos from '../hooks/useFectchVideos';
 
 const VideoContainer = () => {
-    const [videos, setVideos] = useState([]);
-
-    useEffect(() => {
-        getVideos();
-    }, [])
-
-    const getVideos = async () => {
-        const data = await fetch(YOUTUBE_VIDEOS_API);
-        const json = await data.json();
-        setVideos(json.items);
-    }
-
+    const videos = useFetchVideos();
     return (
         <div className='flex flex-row flex-wrap justify-start'>
             {
@@ -24,4 +12,4 @@ const VideoContainer = () => {
     )
 }
 
-export default VideoContainer
+export default VideoContainer;

@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Comments = ({ info }) => {
-    console.log(info)
     const {
         authorChannelUrl,
         authorDisplayName,
