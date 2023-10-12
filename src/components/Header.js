@@ -23,7 +23,7 @@ function Header() {
                 <img src="/logo.png" alt="YT-LOGO" className='w-20' />
             </div>
 
-            <form className="inputBox flex flex-row w-1/3">
+            <form className="inputBox flex flex-row w-1/3 relative">
                 <input type="text"
                     placeholder='search'
                     className='h-10 text-white border border-white w-[85%] p-2 rounded-l-full outline-0 bg-gray-900'
@@ -36,6 +36,9 @@ function Header() {
                 <button className='w-[10%] bg-gray-700 rounded-r-full h-10 border border-white'>
                     < FontAwesomeIcon className='text-white h-4' icon={faMagnifyingGlass} />
                 </button>
+                {
+                    (suggestions.length !== 0) ? <SuggestionBox list={suggestions} /> : null
+                }
             </form>
 
             <div className="right flex flex-row items-center border border-red-900 w-1/6 p-2 justify-evenly">
@@ -43,7 +46,6 @@ function Header() {
                 < FontAwesomeIcon className='text-white h-5' icon={faBell} />
                 <FontAwesomeIcon className='text-white h-5' icon={faUser} />
             </div>
-            <SuggestionBox list={suggestions} />
         </div>
     )
 }

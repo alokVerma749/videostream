@@ -4,7 +4,7 @@ import useFetchVideos from '../hooks/useFectchVideos';
 const VideoContainer = () => {
     const videos = useFetchVideos();
     return (
-        <div className='flex flex-row flex-wrap justify-start'>
+        <div className='flex flex-row flex-wrap justify-center'>
             {
                 videos.map(video => <VideoCard info={video} key={video.id} />)
             }
