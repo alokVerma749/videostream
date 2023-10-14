@@ -27,10 +27,10 @@ const WatchPage = () => {
     }
     return (
         <div className='p-2 w-full flex flex-col md:flex-row'>
-            <div className="flex flex-col w-[70%]">
-                <div className="player h-screen">
+            <div className="flex flex-col w-full md:w-[70%]">
+                <div className="player md:h-screen">
                     <iframe
-                        className='w-full mx-auto rounded-lg h-3/4'
+                        className='w-full mx-auto rounded-lg md:h-3/4'
                         src={"https://www.youtube.com/embed/" + searchParams.get("v")}
                         title="YouTube video player"
                         allowFullScreen>
