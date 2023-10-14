@@ -4,7 +4,8 @@ import { YOUTUBE_SEARCH_API } from "../utils/constants";
 function useSearchSuggestion(searchQuery) {
     const [suggestions, setSuggestions] = useState('');
     useEffect(() => {
-        getData();
+        const timer = setTimeout(() => getData(), 200);
+        return () => clearTimeout(timer);
     }, [searchQuery])
 
     const getData = async () => {
