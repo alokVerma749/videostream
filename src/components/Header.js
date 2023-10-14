@@ -48,7 +48,7 @@ function Header() {
                 }
             </form>
 
-            <div className="right hidden md:flex flex-row items-center border border-red-900 w-1/6 p-2 justify-evenly">
+            <div className="right hidden md:flex flex-row items-center w-1/6 p-2 justify-evenly">
                 < FontAwesomeIcon className='text-white h-5' icon={faVideo} />
                 < FontAwesomeIcon className='text-white h-5' icon={faBell} />
                 <FontAwesomeIcon className='text-white h-5' icon={faUser} />
