@@ -23,7 +23,7 @@ function Header() {
             < FontAwesomeIcon onClick={toggleMenuHandler} className='text-white h-8 cursor-pointer' icon={faBars} />
             {
                 !isMenuOpen && <div className="left flex flex-row w-40 p-2 justify-between items-center">
-                    <img src="/logo.png" alt="YT-LOGO" className='w-20 hidden md:block' />
+                    <img src="/logo.png" alt="YT-LOGO" className='w-20 ml-[-150px] hidden md:block' />
                 </div>
             }
 
