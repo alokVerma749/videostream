@@ -7,13 +7,13 @@ const VideoCard = ({ info }) => {
     const { likeCount, viewCount } = info.statistics;
 
     return (
-        <div className={"flex flex-col w-full md:w-[30%] m-3 cursor-pointer space-y-1"}>
+        <div className={"flex flex-col w-full md:w-[23%] m-3 cursor-pointer space-y-1"}>
             <Link to={"/watch?v=" + id}>
-                < img className="thummbnail rounded-xl" src={thumbnails.medium.url} alt="" />
-                <div className="title">{title}</div>
+                < img className="thummbnail rounded-xl mx-auto md:mx-0" src={thumbnails.medium.url} alt="" />
+                <div className="title text-center md:text-start">{title}</div>
             </Link>
-            <div className="channel_name">{channelTitle}</div>
-            <div className="stats">{likeCount} views {publishedAt} ago</div>
+            <div className="channel_name text-center md:text-start">{channelTitle}</div>
+            <div className="stats text-center md:text-start">{likeCount} views {publishedAt} ago</div>
         </div >
     )
 }

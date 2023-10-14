@@ -1,25 +1,16 @@
-import React from 'react'
+import { BUTTONLIST_MOCK_DATA } from "../utils/constants";
 
 const ButtonList = () => {
-    return (
-        <div className='flex space-x-4 p-2'>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>All</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Music</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Lo-fi</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Sitcoms</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Live</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Computer Programmin</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Mixes</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Rain</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Classical Music</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>News</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Jazz</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Recently Uploaded</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>Watched</p>
-            <p className=' bg-neutral-500 p-1 w-fit rounded-lg h-fit'>New to you</p>
-        </div>
 
+    return (
+        <div className='flex overflow-x-scroll space-x-4 '>
+            {
+                BUTTONLIST_MOCK_DATA.map((item, index) => {
+                    return <p key={index} className='bg-neutral-500 rounded-lg min-w-fit p-1 m-1'>{item}</p>
+                })
+            }
+        </div>
     )
 }
 
-export default ButtonList
+export default ButtonList;

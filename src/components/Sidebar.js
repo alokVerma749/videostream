@@ -8,6 +8,11 @@ const Sidebar = () => {
   if (!isMenuOpen) return null;
   return (
     <div className="flex flex-col bg-gray-900 text-white p-3 md:w-1/6 space-y-3 border-r">
+      {
+        isMenuOpen && <div className="left flex flex-row w-40 p-2 justify-between items-center">
+          <img src="/logo.png" alt="YT-LOGO" className='w-20' />
+        </div>
+      }
       <Link to="/" className="p-2 flex justify-start items-center">
         < FontAwesomeIcon className='text-white h-5 mr-6' icon={faHouse} />
         <p className='text-lg'>Home</p>
