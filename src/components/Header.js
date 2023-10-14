@@ -8,6 +8,7 @@ import SuggestionBox from './SuggestionBox';
 
 function Header() {
     const [searchQuery, setSearchQuery] = useState('');
+    const [showSuggestions, setShowSuggestions] = useState(true);
     const dispatch = useDispatch();
 
     const toggleMenuHandler = () => {
@@ -23,7 +24,7 @@ function Header() {
             < FontAwesomeIcon onClick={toggleMenuHandler} className='text-white h-8 cursor-pointer' icon={faBars} />
             {
                 !isMenuOpen && <div className="left flex flex-row w-40 p-2 justify-between items-center">
-                    <img src="/logo.png" alt="YT-LOGO" className='w-20 ml-[-150px] hidden md:block' />
+                    <img src="/logo.png" alt="YT-LOGO" className='w-28 ml-[-150px] hidden md:block' />
                 </div>
             }
 
@@ -36,12 +37,14 @@ function Header() {
                         e.preventDefault();
                         setSearchQuery(e.target.value);
                     }}
+                    onFocus={() => setShowSuggestions(true)}
+                    onBlur={() => setShowSuggestions(false)}
                 />
                 <button className='w-[10%] bg-gray-700 rounded-r-full h-10 border border-white'>
                     < FontAwesomeIcon className='text-white h-4' icon={faMagnifyingGlass} />
                 </button>
                 {
-                    (suggestions.length !== 0) ? <SuggestionBox list={suggestions} /> : null
+                    showSuggestions && (suggestions.length !== 0) ? <SuggestionBox list={suggestions} /> : null
                 }
             </form>
 
