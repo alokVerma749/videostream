@@ -7,7 +7,7 @@ const SuggestionBox = ({ list }) => {
             {
                 list.map(suggestion => {
                     return (
-                        <div key={suggestion} className='flex flex-row items-center space-x-2 hover:bg-gray-300'>
+                        <div key={suggestion} className='flex flex-row items-center space-x-2 p-1 hover:bg-gray-400 cursor-pointer'>
                             < FontAwesomeIcon className='text-white h-3 cursor-pointer' icon={faMagnifyingGlass} />
                             <p className='items-center' >{suggestion}</p>
                             {/* <p className='items-center' >iphone</p> */}
