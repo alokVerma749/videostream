@@ -9,6 +9,7 @@ import SideBarVideos from './SideBarVideos.js';
 import Comments from './Comments';
 
 import { YOUTUBE_COMMENTS_API } from '../utils/constants';
+import LiveChat from './LiveChat';
 
 const WatchPage = () => {
     const [comments, setComments] = useState([]);
@@ -26,27 +27,27 @@ const WatchPage = () => {
         setComments(json.items);
     }
     return (
-        <div className='p-2 w-full flex flex-col md:flex-row'>
-            <div className="flex flex-col w-full md:w-[70%]">
-                <div className="player md:h-screen">
+        <div className='flex flex-col md:flex-row md:m-1 mx-auto'>
+            <div className='w-[90%] mx-auto mb-8 md:w-3/4 m-1'>
+                <div className="player">
                     <iframe
-                        className='w-full mx-auto rounded-lg h-[30vh] md:h-3/4'
+                        className='w-full h-[30vh] md:h-[70vh] mx-auto rounded-lg '
                         src={"https://www.youtube.com/embed/" + searchParams.get("v")}
                         title="YouTube video player"
                         allowFullScreen>
                     </iframe>
                 </div>
-                <div className="comments space-y-1">
-                    <p className='text-gray-900 text-3xl mb-5'>Comments</p>
-                    <div className='space-y-8'>
+                <div className="comments space-y-1 w-[80%]">
+                    <p className='text-gray-900 text-3xl'>Comments</p>
+                    <div className='space-y-8 mb-5'>
                         {
                             comments.map(comment => <Comments info={comment} />)
                         }
                     </div>
-
                 </div>
             </div>
-            <div className="videoSuggestions md:w-[35%]  p-3 justify-center mx-auto">
+            <div className='flex flex-col md:w-1/4'>
+                <LiveChat />
                 <SideBarVideos />
             </div>
         </div>

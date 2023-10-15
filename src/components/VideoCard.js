@@ -23,9 +23,9 @@ export const SideVideoCard = ({ info }) => {
     const { channelTitle, channelId, thumbnails } = info.snippet;
     const { title } = info.snippet.localized;
     return (
-        <Link to={"/watch?v=" + id} className={"flex flex-row items-center cursor-pointer p-2 space-x-2"}>
-            < img className="thummbnail w-[180px] h-[100px] rounded-xl" src={thumbnails.medium.url} alt="" />
-            <div className="w-3/4">
+        <Link to={"/watch?v=" + id} className={"flex flex-row w-[90%] justify-center items-center cursor-pointer m-2 mx-auto space-x-2"}>
+            < img className="thummbnail h-[100px] rounded-xl" src={thumbnails.medium.url} alt="" />
+            <div className="md:w-3/4">
                 <div className="title text-sm">{title}</div>
                 <div className="channel_name text-sm">{channelTitle}</div>
             </div>

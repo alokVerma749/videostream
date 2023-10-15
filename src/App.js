@@ -7,6 +7,7 @@ import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import { useState } from "react";
 
 const appRouter = createBrowserRouter([
   {
@@ -26,15 +27,16 @@ const appRouter = createBrowserRouter([
 ])
 
 function App() {
+  const [dark, setDark] = useState(true)
   return (
     <Provider store={store}>
-      <div div className="App" >
+      <div div className={`App ${dark ? "text-white bg-gray-900" : "text-black bg-white"}`} >
         <Header />
         <RouterProvider router={appRouter}>
           <Body />
         </RouterProvider>
       </div >
-    </Provider>
+    </Provider >
   );
 }
 
