@@ -29,3 +29,8 @@
 - redux (state management)
 - Tailwind-css (css -library/style)
 - fontawesome (icons)
+
+- # Screenshots:
+
+![image](https://github.com/alokVerma749/videostream/assets/87599400/ebcc8b5e-cef3-4f6c-b3f2-7e29170914ae)
+
